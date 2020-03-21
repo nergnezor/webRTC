@@ -1,6 +1,6 @@
 #video {
   border: 2px solid rgba(0, 0, 0, 0.2);
-  width: 80%;
+  width: 100%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   display: block;
@@ -22,12 +22,19 @@
 
 body {
   color: rgba(255, 255, 255, 0.801);
-  background: #3c1f49;
+  background-color: #3c1f49;
   font-family: Roboto;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline
 }
 
 button{
@@ -38,9 +45,9 @@ button{
   /* max-width: 200px; */
   padding: 1%;
   margin: 1%;
-  font-size: large;
+  font-size: 200%;
   border-radius: 10px;
-  transition: all 0.1s ease-in-out;
+  transition: cubic-bezier();
 }
 
 button:active {
