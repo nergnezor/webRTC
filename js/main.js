@@ -37,25 +37,24 @@ function gotLocalMediaStream(mediaStream) {
   videoElem.srcObject = mediaStream;
   dumpOptionsInfo();
 }
-function handleLocalMediaStreamError(error) {
-  console.log("navigator.getUserMedia error: ", error);
-}
-
-function StartScreenCapture() {
-  if (navigator.getDisplayMedia) {
-    return navigator.getDisplayMedia(displayMediaOptions);
-  } else if (navigator.mediaDevices.getDisplayMedia) {
-    return navigator.mediaDevices.getDisplayMedia({ video: true });
-  } else {
-    return navigator.mediaDevices.getUserMedia(displayMediaOptions);
-  }
+async function handleLocalMediaStreamError(error) {
+  console.error("navigator.getUserMedia error: ", error.message);
 }
 
 async function startCapture() {
   logElem.innerHTML = "";
-  StartScreenCapture()
-    .then(gotLocalMediaStream)
-    .catch(handleLocalMediaStreamError);
+  try {
+    videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(
+      displayMediaOptions
+    );
+    dumpOptionsInfo();
+  } catch (err) {
+    console.error("Error: " + err);
+    navigator.mediaDevices
+      .getUserMedia(displayMediaOptions)
+      .then(gotLocalMediaStream)
+      .catch(console.error("Error: " + err));
+  }
 }
 
 function stopCapture(evt) {
