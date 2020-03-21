@@ -43,13 +43,11 @@ function handleLocalMediaStreamError(error) {
 
 function StartScreenCapture() {
   if (navigator.getDisplayMedia) {
-    return navigator.getDisplayMedia({ video: true });
+    return navigator.getDisplayMedia(displayMediaOptions);
   } else if (navigator.mediaDevices.getDisplayMedia) {
     return navigator.mediaDevices.getDisplayMedia({ video: true });
   } else {
-    return navigator.mediaDevices.getUserMedia({
-      video: { mediaSource: "screen" }
-    });
+    return navigator.mediaDevices.getUserMedia(displayMediaOptions);
   }
 }
 
