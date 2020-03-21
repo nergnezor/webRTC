@@ -33,11 +33,12 @@ a {
   color: white;
   text-decoration: none;
 }
-a:hover, a:focus {
-  text-decoration: underline
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
 
-button{
+button {
   background-color: rgb(68, 145, 158);
   border: none;
   color: white;
