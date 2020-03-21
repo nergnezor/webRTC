@@ -9,9 +9,7 @@ console.info = msg => logElem.innerHTML += `<span class="info">${msg}</span><br>
 // Options for getDisplayMedia()
 
 var displayMediaOptions = {
-    video: {
-        cursor: "always"
-    },
+    video: true,
     audio: false
 };
 
