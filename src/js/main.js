@@ -22,6 +22,12 @@ stopElem.addEventListener("click", function (evt) {
     stopCapture();
 }, false);
 
+function gotLocalMediaStream(mediaStream) {
+  videoElem.srcObject = mediaStream;
+}
+function handleLocalMediaStreamError(error) {
+  console.log('navigator.getUserMedia error: ', error);
+}
 async function startCapture() {
     logElem.innerHTML = "";
 
@@ -30,6 +36,7 @@ async function startCapture() {
         dumpOptionsInfo();
     } catch (err) {
         console.error("Error: " + err);
+        navigator.mediaDevices.getUserMedia(displayMediaOptions).then(gotLocalMediaStream).catch(handleLocalMediaStreamError);
     }
 }
 
