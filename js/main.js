@@ -25,7 +25,7 @@ stopElem.addEventListener("click", function (evt) {
 }, false);
 
 async function startCapture() {
-    // logElem.innerHTML = "";
+    logElem.innerHTML = "";
 
     try {
         videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);

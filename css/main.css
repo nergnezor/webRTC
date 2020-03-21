@@ -1,7 +1,8 @@
 #video {
-  border: 1px solid #999;
-  width: 98%;
-  max-width: 300px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  width: 80%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 .error {
@@ -13,5 +14,27 @@
 }
 
 .info {
-  color: darkgreen;
+  color: rgba(255, 255, 255, 0.616);
+}
+
+body {
+  color: white;
+  background: linear-gradient(90deg, #3c1f49 0%, rgb(37, 37, 37) 100%);
+  font-family: Roboto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+button{
+  background-color: rgb(68, 145, 158);
+  border: none;
+  color: white;
+  width: 40%;
+  max-width: 200px;
+  padding: 1%;
+  margin: 1%;
+  font-size: large;
+  border-radius: 10px;
 }
