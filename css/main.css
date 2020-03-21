@@ -3,6 +3,9 @@
   width: 80%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .error {
@@ -18,8 +21,8 @@
 }
 
 body {
-  color: white;
-  background: linear-gradient(90deg, #3c1f49 0%, rgb(37, 37, 37) 100%);
+  color: rgba(255, 255, 255, 0.801);
+  background: #3c1f49;
   font-family: Roboto;
   display: block;
   margin-left: auto;
@@ -32,9 +35,17 @@ button{
   border: none;
   color: white;
   width: 40%;
-  max-width: 200px;
+  /* max-width: 200px; */
   padding: 1%;
   margin: 1%;
   font-size: large;
   border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+}
+
+button:active {
+  transform: scale(1.1);
+}
+button:hover {
+  transform: scale(1.1);
 }
