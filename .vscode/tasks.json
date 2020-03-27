@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "type": "shell",
+  "options": { "cwd": "${workspaceFolder}" },
+  "taskName": "tsc",
+  "command": "tsc",
+  "args": ["-w", "-p", "."],
+  "problemMatcher": "$tsc-watch",
+  "echoCommand": true
+}
