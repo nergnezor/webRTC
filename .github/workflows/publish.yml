@@ -6,8 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: tsc
-        uses: icrawl/action-tsc@v1
+      - uses: stepek/tsc-action@master
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
