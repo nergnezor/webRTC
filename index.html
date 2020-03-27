@@ -11,22 +11,11 @@
   </head>
 
   <body>
-    <p>
-      Enable
-      <a href="chrome://flags"
-        >chrome://flags/#enable-experimental-web-platform-features</a
-      >
-    </p>
+    <p><button id="start">+</button>&nbsp;<button id="stop">-</button></p>
 
-    <p>
-      <button id="start">+</button>&nbsp;<button id="stop">
-        Stop Capture
-      </button>
-    </p>
-
-    <div id="videos">
-      <video id="video" autoplay></video>
-    </div>
+    <div id="videos"></div>
+    <br />
+    <video id="remoteVideo" autoplay></video>
     <br />
 
     <strong>Log</strong>

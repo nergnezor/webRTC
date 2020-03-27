@@ -1,14 +1,25 @@
-videos {
+div#videos {
   width: 80%;
+  /* min-height: 2em; */
+  min-height: 10em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  /* color: aliceblue;  */
 }
 video {
   border: 2px solid rgba(0, 0, 0, 0.2);
-  width: 80/3%;
   background: rgba(255, 255, 255, 0.1);
+  width: 80;
+  /* max-width: width 300px; */
   border-radius: 10px;
-  display: flexbox;
-  margin-left: auto;
-  margin-right: auto;
+  /* display: grid;
+  resize: none;
+  overflow: none;
+  clip: rect(200, 200, 200, 200); */
+  /* display: flexbox; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* zoom: 10; */
 }
 
 .error {
@@ -53,13 +64,16 @@ button {
   border-radius: 10px;
   transition: cubic-bezier();
 }
-button#start {
+button#start,
+button#stop {
   border-radius: 100%;
   width: 2em;
   height: 2em;
 }
 
-button:active,
+button:active {
+  transform: scale(0.8);
+}
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
