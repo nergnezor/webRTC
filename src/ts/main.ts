@@ -48,6 +48,7 @@ async function startCapture() {
   div.appendChild(video2);
   logElem.innerHTML = "";
   try {
+    // @ts-ignore
     videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(
       displayMediaOptions
     );
