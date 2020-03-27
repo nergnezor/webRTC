@@ -37,24 +37,28 @@ function gotLocalMediaStream(mediaStream: MediaStream) {
   videoElem.srcObject = mediaStream;
   dumpOptionsInfo();
 }
-async function handleLocalMediaStreamError(error: Error) {
+async function error(error: Error) {
   console.error(error);
 }
 
 async function startCapture() {
+  let video = document.createElement("video");
+  let video2 = video as HTMLVideoElement;
+  let div = document.getElementById("videos");
+  div.appendChild(video2);
   logElem.innerHTML = "";
   try {
+    // @ts-ignore
     videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(
       displayMediaOptions
     );
     dumpOptionsInfo();
   } catch (err) {
-    handleLocalMediaStreamError(err);
+    error(err);
     navigator.mediaDevices
       .getUserMedia(displayMediaOptions)
       .then(gotLocalMediaStream)
-      .catch(handleLocalMediaStreamError);
-    // .catch(console.error("Error: " + err));
+      .catch(error);
   }
 }
 

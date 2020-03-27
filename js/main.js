@@ -22,22 +22,26 @@ function gotLocalMediaStream(mediaStream) {
     videoElem.srcObject = mediaStream;
     dumpOptionsInfo();
 }
-async function handleLocalMediaStreamError(error) {
+async function error(error) {
     console.error(error);
 }
 async function startCapture() {
+    let video = document.createElement("video");
+    let video2 = video;
+    let div = document.getElementById("videos");
+    div.appendChild(video2);
     logElem.innerHTML = "";
     try {
+        // @ts-ignore
         videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
         dumpOptionsInfo();
     }
     catch (err) {
-        handleLocalMediaStreamError(err);
+        error(err);
         navigator.mediaDevices
             .getUserMedia(displayMediaOptions)
             .then(gotLocalMediaStream)
-            .catch(handleLocalMediaStreamError);
-        // .catch(console.error("Error: " + err));
+            .catch(error);
     }
 }
 function stopCapture() {

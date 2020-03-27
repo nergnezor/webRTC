@@ -1,9 +1,12 @@
-#video {
+videos {
+  width: 80%;
+}
+video {
   border: 2px solid rgba(0, 0, 0, 0.2);
-  width: 50%;
+  width: 80/3%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  display: block;
+  display: flexbox;
   margin-left: auto;
   margin-right: auto;
 }
