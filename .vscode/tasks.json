@@ -5,6 +5,5 @@
   "taskName": "tsc",
   "command": "tsc",
   "args": ["-w", "-p", "."],
-  "problemMatcher": "$tsc-watch",
-  "echoCommand": true
+  "problemMatcher": "$tsc-watch"
 }

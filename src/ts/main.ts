@@ -37,7 +37,7 @@ function gotLocalMediaStream(mediaStream: MediaStream) {
   videoElem.srcObject = mediaStream;
   dumpOptionsInfo();
 }
-async function handleLocalMediaStreamError(error: Error) {
+async function error(error: Error) {
   console.error(error);
 }
 
@@ -49,12 +49,11 @@ async function startCapture() {
     );
     dumpOptionsInfo();
   } catch (err) {
-    handleLocalMediaStreamError(err);
+    error(err);
     navigator.mediaDevices
       .getUserMedia(displayMediaOptions)
       .then(gotLocalMediaStream)
-      .catch(handleLocalMediaStreamError);
-    // .catch(console.error("Error: " + err));
+      .catch(error);
   }
 }
 
