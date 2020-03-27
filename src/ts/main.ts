@@ -42,6 +42,10 @@ async function error(error: Error) {
 }
 
 async function startCapture() {
+  let video = document.createElement("video");
+  let video2 = video as HTMLVideoElement;
+  let div = document.getElementById("videos");
+  div.appendChild(video2);
   logElem.innerHTML = "";
   try {
     videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(
