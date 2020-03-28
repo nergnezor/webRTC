@@ -1,27 +1,29 @@
-div#videos {
-  width: 80%;
-  /* min-height: 2em; */
-  min-height: 10em;
+div {
+  min-height: 2em;
+  width: 60%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 1em;
-  /* color: aliceblue;  */
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 800px;
+}
+div#remote {
+  white-space: normal;
+  width: 100%;
+  max-width: 1000px;
 }
 video {
   border: 2px solid rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.1);
-  width: 80;
-  /* max-width: width 300px; */
   border-radius: 10px;
-  /* display: grid;
-  resize: none;
-  overflow: none;
-  clip: rect(200, 200, 200, 200); */
-  /* display: flexbox; */
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* zoom: 10; */
+  width: 100%;
 }
-
+video.server {
+  width: 32.5%;
+}
+strong {
+  font-size: 2em;
+}
 .error {
   color: red;
 }
@@ -38,10 +40,10 @@ body {
   color: rgba(255, 255, 255, 0.801);
   background-color: #3c1f49;
   font-family: Roboto;
-  display: block;
+  /* display: flex; */
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 98%;
 }
 a {
   color: white;
@@ -62,7 +64,7 @@ button {
   margin: 1%;
   font-size: 200%;
   border-radius: 10px;
-  transition: cubic-bezier();
+  transition: 50ms ease-in-out;
 }
 button#start,
 button#stop {
@@ -75,5 +77,5 @@ button:active {
   transform: scale(0.8);
 }
 button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }

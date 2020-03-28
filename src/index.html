@@ -11,17 +11,25 @@
   </head>
 
   <body>
-    <p><button id="start">+</button>&nbsp;<button id="stop">-</button></p>
-
-    <div id="videos"></div>
+    <p>
+      <strong>Sources </strong><button id="start">+</button>
+      <button id="stop" hidden="true">-</button>
+      
+      <div id="videos"></div>
+    </p>
+      <p>
+        <strong>Remotes</strong>
+        <!-- <br /> -->
+        <div id="remote"></div>
+      </p>
+    <!-- <video id="remoteVideo" autoplay></video> -->
     <br />
-    <video id="remoteVideo" autoplay></video>
-    <br />
 
-    <strong>Log</strong>
+    Log
     <br />
     <pre id="log"></pre>
 
+    <script src="js/peerconnection.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
