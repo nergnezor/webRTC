@@ -1,9 +1,16 @@
 {
   "version": "2.0.0",
-  "type": "shell",
-  "options": { "cwd": "${workspaceFolder}" },
-  "taskName": "tsc",
-  "command": "tsc",
-  "args": ["-w", "-p", "."],
-  "problemMatcher": "$tsc-watch"
+  "tasks": [
+    {
+      "label": "Build",
+      "tsconfig": "tsconfig.json",
+      "type": "typescript",
+      "isBackground": true,
+      "option": "watch",
+      "problemMatcher": "$tsc-watch",
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
 }

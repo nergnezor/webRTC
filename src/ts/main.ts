@@ -67,7 +67,6 @@ async function startCapture() {
       .getUserMedia(displayMediaOptions)
       .then(gotLocalMediaStream)
       .catch(error);
-    return;
   } finally {
     sourcesElem.appendChild(video);
     call(video.srcObject as MediaStream);
