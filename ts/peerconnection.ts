@@ -1,10 +1,6 @@
-"use strict";
-let remoteElem = document.getElementById("remote");
-
-// const video = document.querySelector("video");
-// video.width = 400;
+export let remoteElem = document.getElementById("remote");
 let video: HTMLVideoElement;
-const videoRemotes: HTMLVideoElement[] = [];
+export const videoRemotes: HTMLVideoElement[] = [];
 
 let pc1;
 let pc2;
@@ -35,7 +31,7 @@ function onNewVideo() {
   };
 }
 
-function call(stream: MediaStream) {
+export function call(stream: MediaStream) {
   console.log("Starting call");
   startTime = window.performance.now();
   const videoTracks = stream.getVideoTracks();

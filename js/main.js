@@ -1,3 +1,4 @@
+import * as pc from "./peerconnection.js";
 const logElem = document.getElementById("log");
 const startElem = document.getElementById("start");
 const stopElem = document.getElementById("stop");
@@ -51,7 +52,7 @@ async function startCapture() {
     }
     finally {
         sourcesElem.appendChild(video);
-        call(video.srcObject);
+        pc.call(video.srcObject);
     }
 }
 function stopCapture() {
@@ -59,11 +60,11 @@ function stopCapture() {
         .srcObject.getTracks();
     tracks.forEach(track => track.stop());
     sourcesElem.removeChild(videoSources[videoSources.length - 1]);
-    remoteElem.removeChild(videoRemotes[videoRemotes.length - 1]);
+    pc.remoteElem.removeChild(pc.videoRemotes[pc.videoRemotes.length - 1]);
     videoSources[videoSources.length - 1].srcObject = null;
-    videoRemotes[videoRemotes.length - 1].srcObject = null;
+    pc.videoRemotes[pc.videoRemotes.length - 1].srcObject = null;
     videoSources.pop();
-    videoRemotes.pop();
+    pc.videoRemotes.pop();
 }
 function dumpOptionsInfo() {
     const videoTrack = videoSources[videoSources.length - 1]
